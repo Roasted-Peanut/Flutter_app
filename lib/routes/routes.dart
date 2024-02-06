@@ -1,7 +1,8 @@
 
+import 'package:fl_app/controllers/unAuthentication/un_auth_binding.dart';
 import 'package:fl_app/routes/route_name.dart';
-import 'package:fl_app/views/authentication/authen_page.dart';
-import 'package:fl_app/views/authentication/splash_page.dart';
+import 'package:fl_app/views/unAuthentication/un_auth_page.dart';
+import 'package:fl_app/views/unAuthentication/splash_page.dart';
 import 'package:get/route_manager.dart';
 
 class Routes {
@@ -13,7 +14,10 @@ class Routes {
       name: RouteName.splash, 
       page: () => const SplashPage(),
     ),
-    GetPage(name: RouteName.authen, page: () => const AuthenPage()),
+    GetPage(
+        name: RouteName.authen,
+        page: () => const UnAuthenPage(),
+        binding: UnAuthBinding()),
     // GetPage(
     //   name: '/home', 
     //   page: () => HomePage(),

@@ -6,7 +6,7 @@ class ButtonWidgetCommon extends StatefulWidget {
   final double height;
   final String title;
   final Icon? icon;
-  final Container? image;
+  final Widget? image;
   final TextStyle? textStyle;
   final Color buttonColor;
   final Future<void> Function() onTap;
@@ -80,8 +80,8 @@ class _ButtonWidgetCommonState extends State<ButtonWidgetCommon> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  widget.image == null ? const Text('') : widget.image!,
-                  widget.icon == null ? const Text('') : widget.icon!,
+                  if (widget.image != null) widget.image!,
+                  if (widget.icon != null) widget.icon!,
                   SizedBox(
                     width: widget.sizebox,
                   ),

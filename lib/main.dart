@@ -1,3 +1,4 @@
+import 'package:fl_app/app_binding.dart';
 import 'package:fl_app/controllers/theme/theme_controller.dart';
 import 'package:fl_app/routes/routes.dart';
 import 'package:fl_app/theme/Themes.dart';
@@ -24,6 +25,7 @@ class MainApp extends StatelessWidget {
       themeMode: getThemeMode(themeController.theme),
       getPages: Routes.routes,
       initialRoute: Routes.INITIAL,
+      initialBinding: AppBinding(),
     );
   }
 }

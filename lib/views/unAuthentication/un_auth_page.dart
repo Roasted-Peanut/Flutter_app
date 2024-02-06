@@ -1,22 +1,30 @@
+import 'package:fl_app/controllers/unAuthentication/un_auth_controller.dart';
+import 'package:fl_app/providers/un_auth_provider.dart';
+import 'package:fl_app/repositories/un_auth_repository.dart';
 import 'package:fl_app/theme/colors.dart';
 import 'package:fl_app/theme/images.dart';
-import 'package:fl_app/views/authentication/widgets/login_page_widget.dart';
-import 'package:fl_app/views/authentication/widgets/sign_up_page_widget.dart';
+import 'package:fl_app/views/unAuthentication/widgets/login_page_widget.dart';
+import 'package:fl_app/views/unAuthentication/widgets/sign_up_page_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class AuthenPage extends StatefulWidget {
-  const AuthenPage({super.key});
+class UnAuthenPage extends StatefulWidget {
+  const UnAuthenPage({super.key});
 
   @override
-  State<AuthenPage> createState() => _AuthenPageState();
+  State<UnAuthenPage> createState() => _UnAuthenPageState();
 }
 
-class _AuthenPageState extends State<AuthenPage> {
+class _UnAuthenPageState extends State<UnAuthenPage> {
   bool isViewLogin = true;
 
   @override
   void initState() {
-    // TODO: implement initState
+    // init LoginController
+    Get.put(UnAuthenRepository());
+    Get.put(UnAuthenProvider(Get.find()));
+    Get.put(UnAuthenController(Get.find()));
+    // Todo: implement initState
     super.initState();
   }
 

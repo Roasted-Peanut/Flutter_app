@@ -1,5 +1,5 @@
 import 'package:fl_app/theme/images.dart';
-import 'package:fl_app/views/authentication/authen_page.dart';
+import 'package:fl_app/views/unAuthentication/un_auth_page.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +26,7 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
 
   rememberAuth() {
     Future.delayed(const Duration(seconds: 3), () {
-      Get.offAll(() => const AuthenPage());
+      Get.off(() => const UnAuthenPage());
     });
   }
 

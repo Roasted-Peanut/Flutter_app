@@ -8,6 +8,7 @@ typedef OnValidateText = String? Function(String?)?;
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget(
       {Key? key,
+      this.controller,
       this.titleTextField,
       this.hint,
       this.onChange,
@@ -22,6 +23,7 @@ class TextFieldWidget extends StatelessWidget {
       this.textFieldDecoration,
       this.hintStyles})
       : super(key: key);
+  final TextEditingController? controller;
   final String? titleTextField;
   final String? hint;
   final OnChangeText? onChange;
@@ -48,6 +50,7 @@ class TextFieldWidget extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextFormField(
+          controller: controller,
           maxLines: 1,
           initialValue: value,
           style: textFieldStyle,
