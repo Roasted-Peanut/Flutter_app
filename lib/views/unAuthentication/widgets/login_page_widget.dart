@@ -39,11 +39,15 @@ class LoginPageWidget extends GetView<UnAuthenController> {
           const SizedBox(
             height: 10,
           ),
-          TextFieldWidget(
+          GetBuilder<UnAuthenController>( // now re-render when onClick update state
+            init: controller, // INIT IT ONLY THE FIRST TIME
+            builder: (controller) => TextFieldWidget(
             hint: "Password",
             hintStyles: const TextStyle(color: Colors.white70),
             controller: passwordTextcontroller,
-          ),
+            password: controller.isShowPassword,
+            showPassword: (res) => controller.showPassword(res),
+          ),),
           const SizedBox(
             height: 20,
           ),

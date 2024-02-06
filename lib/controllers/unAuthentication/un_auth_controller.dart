@@ -1,4 +1,5 @@
 import 'package:fl_app/providers/un_auth_provider.dart';
+import 'package:fl_app/shared/widgets/show_snack_bar.dart';
 import 'package:get/get.dart';
 
 // The first is using Rx{Type}.
@@ -18,10 +19,17 @@ class UnAuthenController extends GetxController{
   dynamic dataUser;
   final UnAuthenProvider _authenProvider;
   UnAuthenController(this._authenProvider);
+  bool isShowPassword = true;
 
   void increment() {
     count.value ++;
     counter ++;
+    update();
+  }
+
+  void showPassword(bool status) {
+    // Todo something
+    isShowPassword = status;
     update();
   }
 
@@ -35,7 +43,7 @@ class UnAuthenController extends GetxController{
     _authenProvider.login(userName: userName, password: password).then((value) {
       if (value != null) {
         printInfo(info: "login success $value");
-        return;
+        ShowSnackBar.snackBar(title: "Success", message: "Login success");
       } else {
         printError(info: "login error $value");
       }

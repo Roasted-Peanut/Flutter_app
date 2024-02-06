@@ -21,7 +21,8 @@ class TextFieldWidget extends StatelessWidget {
       this.inputBorder,
       this.inputFormatters,
       this.textFieldDecoration,
-      this.hintStyles})
+      this.hintStyles,
+      this.showPassword})
       : super(key: key);
   final TextEditingController? controller;
   final String? titleTextField;
@@ -37,6 +38,7 @@ class TextFieldWidget extends StatelessWidget {
   final List<TextInputFormatter>? inputFormatters;
   final InputDecoration? textFieldDecoration;
   final TextStyle? hintStyles;
+  final void Function(bool res)? showPassword;
 
   @override
   Widget build(BuildContext context) {
@@ -83,6 +85,17 @@ class TextFieldWidget extends StatelessWidget {
             ),
             hintStyle: hintStyle,
             hintText: hint,
+              suffixIcon: password != null
+                  ? GestureDetector(
+                    onTap: () {
+                      if (showPassword != null) {
+                        showPassword!(!password!);
+                      }
+                    },
+                      child: Icon(
+                      password == true ? Icons.remove_red_eye : Icons.remove_moderator_sharp,
+                    ))
+                  : null
           ),
         ),
       ],
