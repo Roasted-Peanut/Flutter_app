@@ -4,14 +4,14 @@ import 'package:get/get.dart';
 
 // The first is using Rx{Type}.
 //     var count = RxString();
-    
+
 // The second is to use Rx and type it with Rx<Type>
 //     var count = Rx<String>();
-    
+
 // The third, more practical and easier approach, is just to add an .obs to your variable.
 //     var count = 0.obs;
 
-class UnAuthenController extends GetxController{
+class UnAuthenController extends GetxController {
   // var count = RxInt(0);
   var count = Rx<int>(0);
   // var count = 0.obs;
@@ -22,8 +22,8 @@ class UnAuthenController extends GetxController{
   bool isShowPassword = true;
 
   void increment() {
-    count.value ++;
-    counter ++;
+    count.value++;
+    counter++;
     update();
   }
 
