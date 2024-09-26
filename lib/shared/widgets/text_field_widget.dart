@@ -62,41 +62,43 @@ class TextFieldWidget extends StatelessWidget {
           validator: onValidate,
           inputFormatters: inputFormatters,
           decoration: InputDecoration(
-            filled: true,
-            fillColor: AppColor.black05,
-            contentPadding:
-                const EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
-            focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(32),
-              borderSide: const BorderSide(
-                color: Color(0xffCCCCCC),
+              filled: true,
+              fillColor: AppColor.black05,
+              contentPadding:
+                  const EdgeInsets.symmetric(vertical: 12.0, horizontal: 10.0),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(32),
+                borderSide: const BorderSide(
+                  color: Color(0xffCCCCCC),
+                ),
               ),
-            ),
-            enabledBorder: OutlineInputBorder(
-              borderSide: const BorderSide(width: 1, color: Color(0xffCCCCCC)),
-              borderRadius: BorderRadius.circular(32.0),
-            ),
-            focusedErrorBorder: const OutlineInputBorder(
-              borderRadius: BorderRadius.all(Radius.circular(32)),
-              borderSide: BorderSide(
-                width: 1,
-                color: Color(0xffD63A3A),
+              enabledBorder: OutlineInputBorder(
+                borderSide:
+                    const BorderSide(width: 1, color: Color(0xffCCCCCC)),
+                borderRadius: BorderRadius.circular(32.0),
               ),
-            ),
-            hintStyle: hintStyle,
-            hintText: hint,
+              focusedErrorBorder: const OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(32)),
+                borderSide: BorderSide(
+                  width: 1,
+                  color: Color(0xffD63A3A),
+                ),
+              ),
+              hintStyle: hintStyle,
+              hintText: hint,
               suffixIcon: password != null
                   ? GestureDetector(
-                    onTap: () {
-                      if (showPassword != null) {
-                        showPassword!(!password!);
-                      }
-                    },
+                      onTap: () {
+                        if (showPassword != null) {
+                          showPassword!(!password!);
+                        }
+                      },
                       child: Icon(
-                      password == true ? Icons.remove_red_eye : Icons.remove_moderator_sharp,
-                    ))
-                  : null
-          ),
+                        password == true
+                            ? Icons.remove_red_eye
+                            : Icons.remove_moderator_sharp,
+                      ))
+                  : null),
         ),
       ],
     );

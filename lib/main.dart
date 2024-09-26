@@ -36,7 +36,7 @@ getThemeMode(String type) {
     case "system":
       themeMode = ThemeMode.system;
       break;
-    case "dark": 
+    case "dark":
       themeMode = ThemeMode.dark;
       break;
     default:

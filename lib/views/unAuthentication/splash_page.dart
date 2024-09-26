@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SplashPage extends StatefulWidget {
-  const SplashPage({ Key? key }) : super(key: key);
+  const SplashPage({Key? key}) : super(key: key);
 
   @override
   State<SplashPage> createState() => _SplashPageState();
@@ -41,11 +41,15 @@ class _SplashPageState extends State<SplashPage> with TickerProviderStateMixin {
     return Scaffold(
         // backgroundColor: Colors.white,
         body: FadeTransition(
-          opacity: animation,
-          child: Container(
-            alignment: Alignment.center,
-            child: Image.asset(imageBackground, fit: BoxFit.cover, height: MediaQuery.of(context).size.height,),
-          ),
-        ));
+      opacity: animation,
+      child: Container(
+        alignment: Alignment.center,
+        child: Image.asset(
+          imageBackground,
+          fit: BoxFit.cover,
+          height: MediaQuery.of(context).size.height,
+        ),
+      ),
+    ));
   }
 }

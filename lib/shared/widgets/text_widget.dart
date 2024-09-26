@@ -1,15 +1,19 @@
 import 'package:fl_app/theme/colors.dart';
 import 'package:flutter/material.dart';
+
 class TextWidget extends StatelessWidget {
-  const TextWidget(this.text, {
-    Key? key,
-    this.style,
-    this.textAlign,
-    this.font, this.size, this.color, this.maxLines
-  }) : assert(
-  text != null,
-  'A non-null String must be provided to a Text widget.',
-  ),
+  const TextWidget(this.text,
+      {Key? key,
+      this.style,
+      this.textAlign,
+      this.font,
+      this.size,
+      this.color,
+      this.maxLines})
+      : assert(
+          text != null,
+          'A non-null String must be provided to a Text widget.',
+        ),
         super(key: key);
   final String? text;
   final TextStyle? style;
@@ -23,8 +27,12 @@ class TextWidget extends StatelessWidget {
     final textStyle = const TextStyle(color: AppColor.white).merge(style);
     return Text(text!,
         textAlign: textAlign ?? TextAlign.start,
-        style: textStyle.merge(TextStyle(fontFamily: font)).merge(TextStyle(fontSize: size)).merge(TextStyle(color: color)),
+        style: textStyle
+            .merge(TextStyle(fontFamily: font))
+            .merge(TextStyle(fontSize: size))
+            .merge(TextStyle(color: color)),
         maxLines: maxLines,
-        overflow: maxLines == null ? TextOverflow.visible : TextOverflow.ellipsis);
+        overflow:
+            maxLines == null ? TextOverflow.visible : TextOverflow.ellipsis);
   }
 }

@@ -12,8 +12,8 @@ class LoginPageWidget extends GetView<UnAuthenController> {
 
   @override
   Widget build(BuildContext context) {
-  TextEditingController userNameTextcontroller = TextEditingController();
-  TextEditingController passwordTextcontroller = TextEditingController();
+    TextEditingController userNameTextcontroller = TextEditingController();
+    TextEditingController passwordTextcontroller = TextEditingController();
 
     return Expanded(
       child: SingleChildScrollView(
@@ -39,15 +39,17 @@ class LoginPageWidget extends GetView<UnAuthenController> {
           const SizedBox(
             height: 10,
           ),
-          GetBuilder<UnAuthenController>( // now re-render when onClick update state
+          GetBuilder<UnAuthenController>(
+            // now re-render when onClick update state
             init: controller, // INIT IT ONLY THE FIRST TIME
             builder: (controller) => TextFieldWidget(
-            hint: "Password",
-            hintStyles: const TextStyle(color: Colors.white70),
-            controller: passwordTextcontroller,
-            password: controller.isShowPassword,
-            showPassword: (res) => controller.showPassword(res),
-          ),),
+              hint: "Password",
+              hintStyles: const TextStyle(color: Colors.white70),
+              controller: passwordTextcontroller,
+              password: controller.isShowPassword,
+              showPassword: (res) => controller.showPassword(res),
+            ),
+          ),
           const SizedBox(
             height: 20,
           ),
@@ -56,10 +58,16 @@ class LoginPageWidget extends GetView<UnAuthenController> {
             height: 42,
             buttonColor: AppColor.green,
             onTap: () async {
-              if (userNameTextcontroller.text != "" && passwordTextcontroller.text != "") {
-                controller.login(userName: userNameTextcontroller.text, password: passwordTextcontroller.text);
+              if (userNameTextcontroller.text != "" &&
+                  passwordTextcontroller.text != "") {
+                controller.login(
+                    userName: userNameTextcontroller.text,
+                    password: passwordTextcontroller.text);
               } else {
-                ShowSnackBar.snackBar(type: 'error', title: "Error", message: "Username or password not empty.");
+                ShowSnackBar.snackBar(
+                    type: 'error',
+                    title: "Error",
+                    message: "Username or password not empty.");
               }
             },
           )

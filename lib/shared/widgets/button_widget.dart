@@ -16,7 +16,8 @@ class ButtonWidgetCommon extends StatefulWidget {
   final BoxDecoration? decoration;
 
   const ButtonWidgetCommon(
-      {super.key, this.width,
+      {super.key,
+      this.width,
       required this.height,
       required this.title,
       this.icon,
@@ -59,7 +60,9 @@ class _ButtonWidgetCommonState extends State<ButtonWidgetCommon> {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = const TextStyle(fontSize: 20, color: AppColor.white, fontWeight: FontWeight.bold).merge(widget.textStyle);
+    final textStyle = const TextStyle(
+            fontSize: 20, color: AppColor.white, fontWeight: FontWeight.bold)
+        .merge(widget.textStyle);
     return Container(
       margin: widget.margin,
       decoration: widget.decoration,
